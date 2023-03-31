@@ -1,20 +1,4 @@
-// initializing installed packages
-const express = require("express");
-const app = express();
-// const bodyParser = require("body-parser")
 const nodemailer = require("nodemailer");
-const cors = require("cors");
-// declearing which port my server will be listening on
-const port = process.env.PORT || 8000;    // while hosting, ensure to add the port variable
-
-// getting the app to get response from the frontend and send json
-app.use(express.json({ extended: true }));
-app.use(cors());
-// initlizing cors
-// app.use(cors())
-const requestIp = require('request-ip');
-app.get('/', (req,res) => {
-    res.send('server is active')
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
